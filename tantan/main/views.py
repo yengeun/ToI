@@ -32,3 +32,4 @@ class LoginView(APIView):
             return Response({"error": "Invalid password"}, status=status.HTTP_400_BAD_REQUEST)
         except User.DoesNotExist:
             return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
