@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #ffffff;
+    border: 5px solid #007b57; /* Green border */
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .logo {
+    margin-bottom: 30px;
+  }
+  
+  .logo-image {
+    width: 150px; /* Adjust width based on your SVG file */
+    height: auto;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-btn, .register-btn {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 300px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  .login-btn {
+    background-color: #ffffff;
+    color: #007b57;
+    border: 1px solid #007b57;
+  }
+  
+  .register-btn {
+    background-color: #a4d4ae; /* Light green */
+    color: #ffffff;
+  }
+  
+  .login-btn:hover, .register-btn:hover {
+    opacity: 0.9;
+  }
+  
