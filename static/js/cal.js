@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const annualEmission = co2Value * 12;
   
       // 결과 표시
-      resultSpan.textContent = annualEmission.toLocaleString(); // 숫자를 보기 좋게 포맷
+      resultSpan.textContent = annualEmission.toLocaleString(); // 숫자 포맷
     });
   });
   
