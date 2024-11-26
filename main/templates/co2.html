@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2 Sensor Data</title>
+  <link rel="stylesheet" href="../../../static/css/co2.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <img src="../../../static/img/logo1.svg" alt="Logo" class="logo">
+          <ul class="menu">
+            <li><a href="#" class="active"><span>Overview</span></a></li>
+            <li><a href="../../../main/templates/cal.html"><span>탄소값 계산</span></a></li>
+            <li><a href="../../../main/templates/co2.html"><span>탄소 측정치</span></a></li>
+         
+          </ul>
+          <div class="user">
+            <img src="../../../static/img/user.png" alt="User" class="user-avatar">
+            <span class="username">username</span>
+          </div>
+        </div>
+
+        <div class = "main-content">
+            <h1>CO2 Sensor Data</h1>
+            <div id="co2-value">Loading...</div>
+            <div class="status">서버에서 값 받아오는 중...</div>
+        </div>
+    </div>
+
+  <script>
+    // 서버에서 CO2 데이터를 주기적으로 가져오는 함수
+    async function fetchCO2Data() {
+      try {
+        // 서버에서 데이터 가져오기 (Node.js 서버 엔드포인트)
+        const response = await fetch('http://localhost:3000/co2');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        // JSON 데이터 파싱
+        const data = await response.json();
+        const co2Value = data.co2;
+
+        // CO2 데이터를 화면에 업데이트
+        document.getElementById('co2-value').textContent = `${co2Value} ppm`;
+
+        // 상태 업데이트
+        document.querySelector('.status').textContent = '데이터 업데이트 완료!';
+      } catch (error) {
+        console.error('Error fetching CO2 data:', error);
+        document.querySelector('.status').textContent = '데이터 받아오기 실패ㅜ';
+      }
+    }
+
+    // 10초마다 CO2 데이터를 가져옴
+    setInterval(fetchCO2Data, 10000);
+
+    // 페이지 로드 시 첫 데이터 가져오기
+    fetchCO2Data();
+  </script>
+</body>
+</html>
