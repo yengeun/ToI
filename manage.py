@@ -1,4 +1,3 @@
-<<<<<<< HEAD:manage.py
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -44,4 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
->>>>>>> 6a10e3d4e4d66cc32dbd8dfe7a2d2be912220cca:tantan/manage.py
