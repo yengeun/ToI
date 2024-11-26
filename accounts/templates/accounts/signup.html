@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../../../static/css/signup.css">
+</head>
+<body>
+
+  <div class="header">
+    <img src="../../../static/img/logo2.svg" alt="로고" class="header-logo">
+  </div>
+
+  <div class="container">
+    <!-- 팝업 메시지 영역 -->
+    <div id="popup-message" class="popup hidden">
+      <p id="popup-text"></p>
+      <button onclick="closePopup()">닫기</button>
+    </div>
+    <form class="singup-form" action="{% url 'accounts:signup' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" placeholder="이메일을 입력해주세요" required>
+      </div>
+      <div class="form-group">
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password" placeholder="비밀번호를 입력해주세요" required>
+      </div>
+      <div class="form-group">
+        <label for="passwordck">비밀번호 확인</label>
+        <input type="password" name="passwordck" id="passwordck" placeholder="비밀번호를 입력해주세요" required>
+      </div>
+      <div class="form-group">
+        <label for="group">소속 기업</label>
+        <input type="text" name="company" id="company" placeholder="소속 기업을 입력해주세요" required>
+      </div>
+      <button type="submit" class="signup-btn">회원가입</button>
+    </form>
+  </div>
+<script>
+    // 팝업 닫기 함수
+    function closePopup() {
+      document.getElementById('popup-message').classList.add('hidden');
+    }
+
+    // Django 메시지가 있으면 팝업 표시
+    {% if messages %}
+      let message = "{% for message in messages %}{{ message }}{% endfor %}";
+      let popup = document.getElementById('popup-message');
+      let popupText = document.getElementById('popup-text');
+      popupText.innerText = message;
+      popup.classList.remove('hidden');
+    {% endif %}
+  </script>
+
+  <style>
+    /* 팝업 스타일 */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .popup.hidden {
+      display: none;
+    }
+
+    .popup button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</body>
+</html>
