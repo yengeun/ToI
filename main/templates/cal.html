@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탄소발자국 계산기</title>
+  <link rel="stylesheet" href="../../../static/css/cal.css">
+</head>
+<body>
+    <a href="../../../main/templates/main.html" class="home-button">
+        홈으로
+      </a>
+  <div class="calculator-container">
+    <header>
+      <div class="company-name">
+        <label for="company" class="company-label">기업명: </label>
+        <input type="text" id="company" class="company-input" placeholder="기업명을 입력하세요" />
+      </div>
+      <h1>탄소발자국 계산기</h1>
+      <p>우리 기업에서 배출하는 이산화탄소의 양은 얼마일까요?</p>
+    </header>
+    <div class="tab-menu">
+      <button class="tab active">기업용</button>
+      <button class="tab">결과보기</button>
+    </div>
+    <div class="input-section">
+      <label for="co2" class="input-label">
+        <span>CO₂ 값을 불러오세요</span>
+        <input type="number" id="co2" placeholder="CO₂ 값..." readonly />
+        <span>kg/월</span>
+      </label>
+      <button id="fetch-co2-data" class="fetch-btn">CO₂ 값 불러오기</button>
+      <div class="result-box">
+        <div class="result-item">
+          <span>CO₂ 배출량</span>
+          <span id="result">0</span>
+          <span>kg/월</span>
+        </div>
+      </div>
+      <button id="calculate" class="calculate-btn">계산하기</button>
+    </div>
+  </div>
+  <script src="../../../static/js/cal.js"></script>
+</body>
+</html>
