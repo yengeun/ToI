@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(pattern_name='accounts:signin', permanent=False)),  # 기본 URL을 로그인 페이지로 리다이렉트
     path('accounts/', include('accounts.urls')),  # accounts
-    path('main/', include('main.urls')),          # main
+    path('dashboard/', include('dashboard.urls')),          # dashboard
     path('calculator/', include('calculator.urls')),  # calculator
-    path('', include('main.urls')),  # 기본 경로를 메인 대시보드로 연결
+    path('', include('dashboard.urls')),  # 기본 경로를 메인 대시보드로 연결
 ]

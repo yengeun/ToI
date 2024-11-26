@@ -15,7 +15,7 @@ def login_view(request):    # 로그인
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('main:main')
+            return redirect('dashboard:main')
         else:
             messages.error(request, '아이디나 패스워드가 일치하지 않습니다.')
     return render(request, 'accounts/login.html')

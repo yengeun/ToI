@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",     # 로그인
-    "main",         # 메인 페이지
+    "dashboard",         # 메인 페이지
     "calculator",   # 계산 페이지
 ]
 
@@ -122,5 +122,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # 로그인 관련 설정
 LOGIN_URL = '/accounts/login/'  # 로그인 페이지
-LOGIN_REDIRECT_URL = '/main/'  # 로그인 성공 후 이동
+LOGIN_REDIRECT_URL = '/dashboard/'  # 로그인 성공 후 이동
 LOGOUT_REDIRECT_URL = '/accounts/signin/'  # 로그아웃 후 이동
