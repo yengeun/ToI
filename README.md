@@ -1,6 +1,7 @@
-# FE 수정사항
-- 파일 이름 : signinup → accounts로 변경
-- 경로 코드 수정
-  - main.html : ```line16) <li><a href="../../../main/templates/cal.html"><span>탄소값 계산</span></a></li>``` → ```<li><a href="{% url 'calculator:calculate' %}"><span>탄소값 계산</span></a></li> ```
-  - cal.html : ```line10) <a href="../../../main/templates/main.html" class="home-button"> 홈으로 </a>``` → ```<a href="{% url 'main:dashboard' %}" class="home-button">홈으로</a> ```
-  - login.html : ```line16) <form class="login-form" action="../../../main/templates/main.html">``` → ```<form class="login-form" action="{% url 'main:dashboard' %}">```
+# 수정사항
+- 추가된 기능
+  - 회원가입시 중복된 이메일을 입력하면 에러메시지 팝업
+  - 회원가입시 비밀번호와 비밀번호 확인이 다르면 에러메시지 팝업
+  - 회원가입 성공시 로그인 페이지로 넘어가면서 회원가입 성공 팝업
+- 시연 영상
+https://github.com/user-attachments/assets/2700fbc9-1751-44ba-b118-f31ea6cbab33
