@@ -12,10 +12,9 @@
         <div class="sidebar">
           <img src="../../../static/img/logo1.svg" alt="Logo" class="logo">
           <ul class="menu">
-            <li><a href="#" class="active"><span>Overview</span></a></li>
+            <li><a href="../../../main/templates/main.html"><span>Overview</span></a></li>
             <li><a href="../../../main/templates/cal.html"><span>탄소값 계산</span></a></li>
-            <li><a href="../../../main/templates/co2.html"><span>탄소 측정치</span></a></li>
-         
+            <li><a href="../../../main/templates/co2.html"  class="active"><span>탄소 측정치</span></a></li>
           </ul>
           <div class="user">
             <img src="../../../static/img/user.png" alt="User" class="user-avatar">
@@ -23,7 +22,8 @@
           </div>
         </div>
 
-        <div class = "main-content">
+        <!-- Main Content -->
+        <div class="main-content">
             <h1>CO2 Sensor Data</h1>
             <div id="co2-value">Loading...</div>
             <div class="status">서버에서 값 받아오는 중...</div>
@@ -45,7 +45,7 @@
         const co2Value = data.co2;
 
         // CO2 데이터를 화면에 업데이트
-        document.getElementById('co2-value').textContent = `${co2Value} ppm`;
+        document.getElementById('co2-value').textContent = ${co2Value} ppm;
 
         // 상태 업데이트
         document.querySelector('.status').textContent = '데이터 업데이트 완료!';
