@@ -1,4 +1,3 @@
-<<<<<<< HEAD:tantan/wsgi.py
 """
 WSGI config for tantan project.
 
@@ -15,7 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tantan.settings")
 
 application = get_wsgi_application()
-=======
+
 """
 WSGI config for tantan project.
 
@@ -32,4 +31,3 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tantan.settings")
 
 application = get_wsgi_application()
->>>>>>> 6a10e3d4e4d66cc32dbd8dfe7a2d2be912220cca:tantan/tantan/wsgi.py
